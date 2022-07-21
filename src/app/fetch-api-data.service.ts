@@ -14,6 +14,9 @@ export class UserRegistrationService {
   // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
   }
+
+  //Methods to call each endpoint
+
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
     console.log(userDetails);
@@ -23,7 +26,13 @@ export class UserRegistrationService {
   }
 
   // Making the api call for the user login endpoint
-  //code here
+  public userLogin(userDetails: any): Observable<any> {
+    return this.http
+      .post(apiUrl + 'login', userDetails)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 
   // Making the api call for the get all movies endpoint
   //code here
@@ -55,9 +64,6 @@ export class UserRegistrationService {
   // Making the api call for the delete a movie from the user's favorites list endpoint
   //code here
 
-
-
-
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('Some error occurred:', error.error.message);
@@ -70,3 +76,4 @@ export class UserRegistrationService {
       'Something bad happened; please try again later.');
   }
 }
+
