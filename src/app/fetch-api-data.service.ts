@@ -19,7 +19,7 @@ export class UserRegistrationService {
 
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    console.log(`userDetails from userRegistration(): ${userDetails}`);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
       catchError(this.handleError)
     );
@@ -27,30 +27,61 @@ export class UserRegistrationService {
 
   // Making the api call for the user login endpoint
   public userLogin(userDetails: any): Observable<any> {
-    return this.http
-      .post(apiUrl + 'login', userDetails)
-      .pipe(
-        catchError(this.handleError)
-      );
+    console.log(`userDetails from userLogin(): ${userDetails}`);
+    return this.http.post(apiUrl + 'login', userDetails).pipe(
+      catchError(this.handleError)
+    );
   }
 
   // Making the api call for the get all movies endpoint
-  //code here
+  public getAllMovies(): Observable<any> {
+    console.log(`getAllMovies endpoint called`);
+    return this.http.get(apiUrl + 'movies').pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Making the api call for the get one movie endpoint
-  //code here
+  public getOneMovie(title: any): Observable<any> {
+    console.log(`title: ${title}`);
+    return this.http.get(apiUrl + `movies/${title}`).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Making the api call for the get director endpoint
-  //code here
+  public getDirector(name: any): Observable<any> {
+    console.log(`Director name: ${name}`);
+    return this.http.get(apiUrl + `movies/directors/${name}`).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Making the api call for the get genre endpoint
-  //code here
+  public getGenre(genre: any): Observable<any> {
+    console.log(`Genre name: ${genre}`);
+    return this.http.get(apiUrl + `movies/genres/${genre}`).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Making the api call for the get user endpoint
-  //code here
+  //note - after all the logic works, return to this method and refactor uppercase 'Username' to match lowercase variables of all the others ('username'). 
+  //will need to correct this in my movie_api/index.js file first
+  public getUser(Username: any): Observable<any> {
+    console.log(`Username: ${Username}`);
+    return this.http.get(apiUrl + `/users/${Username}`).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Making the api call for the get favorite movies for a user endpoint
-  //code here
+  public getFavoriteMovies(username: any): Observable<any> {
+    console.log(`username: ${username}`);
+    return this.http.get(apiUrl + `/users/${username}/movies`).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Making the api call for the add a movie to the favorites movies list endpoint
   //code here
