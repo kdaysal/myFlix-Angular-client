@@ -66,11 +66,10 @@ export class UserRegistrationService {
   }
 
   // Making the api call for the get user endpoint
-  //note - after all the logic works, return to this method and refactor uppercase 'Username' to match lowercase variables of all the others ('username'). 
-  //will need to correct this in my movie_api/index.js file first
-  public getUser(Username: any): Observable<any> {
-    console.log(`Username: ${Username}`);
-    return this.http.get(apiUrl + `/users/${Username}`).pipe(
+  //note - if anything odd happens with this one, check movie_api/index.js (in my movie_api folder) to see if the uppercase 'Username' on that endpoint might have any bearing here
+  public getUser(username: any): Observable<any> {
+    console.log(`username: ${username}`);
+    return this.http.get(apiUrl + `/users/${username}`).pipe(
       catchError(this.handleError)
     );
   }
@@ -84,17 +83,41 @@ export class UserRegistrationService {
   }
 
   // Making the api call for the add a movie to the favorites movies list endpoint
-  //code here
+  // Not sure about the return statement syntax here - I may end up not taking in `username` and `movieid` as individual parameters, but that is TBD
+  public addToFavorites(username: any, movieid: any): Observable<any> {
+    console.log(`username: ${username}`);
+    console.log(`movieid: ${movieid}`);
+    return this.http.post(apiUrl + `/users/${username}/movies/${movieid}`, username, movieid).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Making the api call for the edit user endpoint
-  //code here
+  public editUser(updatedUserDetails: any, username: any): Observable<any> {
+    console.log(`updatedUserDetails: ${updatedUserDetails}`);
+    return this.http.put(apiUrl + `/users/${username}`, updatedUserDetails).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Making the api call for the delete user endpoint
-  //code here
+  public deleteUser(username: any): Observable<any> {
+    console.log(`username to delete: ${username}`);
+    return this.http.delete(apiUrl + `/users/${username}`).pipe(
+      catchError(this.handleError)
+    );
+  }
 
   // Making the api call for the delete a movie from the user's favorites list endpoint
-  //code here
+  public deleteMovie(username: any, movieid: any): Observable<any> {
+    console.log(`username to delete movie from: ${username}`);
+    console.log(`movieid to be deleted: ${movieid}`);
+    return this.http.delete(apiUrl + `/users/${username}/movies/${movieid}`).pipe(
+      catchError(this.handleError)
+    );
+  }
 
+  //method to handle any errors that are thrown
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('Some error occurred:', error.error.message);
@@ -107,4 +130,3 @@ export class UserRegistrationService {
       'Something bad happened; please try again later.');
   }
 }
-
