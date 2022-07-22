@@ -15,7 +15,7 @@ export class UserRegistrationService {
   constructor(private http: HttpClient) {
   }
 
-  //Methods to call each endpoint
+  /* ***Methods to call each endpoint*** */
 
   // Making the api call for the user registration endpoint
   public userRegistration(userDetails: any): Observable<any> {
