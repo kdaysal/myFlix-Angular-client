@@ -11,15 +11,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-//import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserRegistrationFormComponent,
-    //UserRegistrationFormComponent
+    UserRegistrationFormComponent
   ],
   imports: [
     BrowserModule,
