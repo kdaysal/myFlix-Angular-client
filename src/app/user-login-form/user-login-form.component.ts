@@ -46,6 +46,7 @@ export class UserLoginFormComponent implements OnInit {
       this.dialogRef.close(); // This will close the modal on success!
       console.log(`result: ${result}`);
 
+      //upon successful user login, route the user to the '.../movies' endpoint
       this.router.navigate(['movies']);
 
       this.snackBar.open(result, 'OK, user was logged in!', {
@@ -59,4 +60,4 @@ export class UserLoginFormComponent implements OnInit {
     });
   }
 
-}
+}//end UserLoginFormComponent

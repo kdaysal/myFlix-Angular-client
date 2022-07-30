@@ -21,6 +21,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 import { MatIconModule } from '@angular/material/icon';
 
+//add all additional routes here (such as for the Profile - TBD)
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
