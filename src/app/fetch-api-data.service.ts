@@ -91,7 +91,7 @@ export class UserRegistrationService {
     console.log(`getUser() in fetch-api-data.service.ts called`)
     const token = localStorage.getItem('token');
     console.log(`username: ${username}`);
-    return this.http.get(apiUrl + `/users/${username}`, {
+    return this.http.get(apiUrl + `users/${username}`, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       })
