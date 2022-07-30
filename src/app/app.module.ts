@@ -20,6 +20,8 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 import { MatIconModule } from '@angular/material/icon';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 //add all additional routes here (such as for the Profile - TBD)
 const appRoutes: Routes = [
@@ -34,7 +36,9 @@ const appRoutes: Routes = [
     UserRegistrationFormComponent,
     UserLoginFormComponent,
     MovieCardComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    ProfilePageComponent,
+    EditProfileComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
