@@ -88,6 +88,7 @@ export class UserRegistrationService {
   // Making the api call for the get user endpoint
   //note - if anything odd happens with this one, check movie_api/index.js (in my movie_api folder) to see if the uppercase 'Username' on that endpoint might have any bearing here
   public getUser(username: any): Observable<any> {
+    console.log(`getUser() in fetch-api-data.service.ts called`)
     const token = localStorage.getItem('token');
     console.log(`username: ${username}`);
     return this.http.get(apiUrl + `/users/${username}`, {
