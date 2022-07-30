@@ -27,12 +27,4 @@ export class WelcomePageComponent implements OnInit {
       width: '320px',
     });
   }
-
-  //This will be moved shortly - keeping here for reference for now
-  openMoviesDialog(): void {
-    this.dialog.open(MovieCardComponent, {
-      width: '320px'
-    });
-  }
-
 }
