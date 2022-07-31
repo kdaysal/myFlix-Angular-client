@@ -1,0 +1,61 @@
+$pageBackgroundColor: #d8dee5;
+$fontColor1: black;
+$fontColor2: rgb(73, 55, 213);
+$cardBackgroundColor: rgb(164, 188, 229);
+$boxShadowColor: #363434;
+
+//contains all movie cards
+.movie-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 80px 0;
+  background-color: $pageBackgroundColor;
+}
+
+//set width and height for each poster image
+img {
+  width: 250px;
+  height: 375px;
+}
+
+//for each individual movie card
+.mat-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 8px 4px 4px $boxShadowColor;
+  background-color: $cardBackgroundColor;
+  margin: 20px;
+  padding: 25px 10px;
+  width: 300px;
+  max-width: 300px;
+  border: 3px solid rgb(232, 63, 100);
+  border-radius: 5px;
+}
+
+//includes movie title and director name
+.mat-card-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 60px;
+  color: $fontColor1;
+}
+
+.mat-card-subtitle {
+  font-size: larger;
+  color: $fontColor2;
+}
+
+//contains Genre, Synopsis, and Favorites icon
+.action-buttons {
+  //background-color: red; //for testing only - REMOVE IN PRODUCTION
+  max-width: 80%;
+  display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
+}
