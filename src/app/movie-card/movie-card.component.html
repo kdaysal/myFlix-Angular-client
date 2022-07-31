@@ -1,23 +1,22 @@
 <!-- the ngFor directive is used to display all returned movies, where each movie is displayed in its own card -->
 <!-- in 'let movies of movies', 'movies' refers to the 'movies' variable declared in the component file -->
-<div style="display: flex;">
+<div style="display: flex;" class="movie-wrapper">
   <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
     <mat-card-header>
       <mat-card-title>{{movie.Title}}</mat-card-title>
       <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
     </mat-card-header>
     <img src={{movie.ImagePath}} alt={{movie.Title}} />
-    <mat-card-actions>
+    <mat-card-actions class="action-buttons">
       <button mat-button color="primary">
         Genre
       </button>
       <button mat-button color="primary">
-        Director
-      </button>
-      <button mat-button color="primary">
         Synopsis
       </button>
-      <mat-icon>favorite_border</mat-icon>
+      <button class="favorite-button">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
