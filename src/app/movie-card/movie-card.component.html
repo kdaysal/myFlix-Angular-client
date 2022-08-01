@@ -1,5 +1,6 @@
 <!-- the ngFor directive is used to display all returned movies, where each movie is displayed in its own card -->
 <!-- in 'let movies of movies', 'movies' refers to the 'movies' variable declared in the component file -->
+<app-navbar></app-navbar>
 <div style="display: flex;" class="movie-wrapper">
   <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
     <mat-card-header>
