@@ -25,6 +25,14 @@ $fontColor1: black;
   margin-bottom: 10px;
 }
 
+.profile-page-actions {
+  //background-color: yellow; //for testing only
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+  padding: 2px;
+}
+
 p {
   font-size: large;
 }
