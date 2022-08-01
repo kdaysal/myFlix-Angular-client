@@ -1,0 +1,17 @@
+$pageBackgroundColor: #d8dee5;
+$fontColor1: black;
+$fontColor2: rgb(73, 55, 213);
+$cardBackgroundColor: rgb(164, 188, 229);
+$boxShadowColor: #363434;
+
+.navbar {
+  //background-color: red; //uncomment for testing only
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.mat-stroked-button {
+  margin: 20px;
+}

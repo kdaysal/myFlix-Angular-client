@@ -1,1 +1,11 @@
-<p>navbar works!</p>
+<div class="navbar">
+  <div class="action-buttons">
+    <button mat-stroked-button class="all-movies-btn" (click)="viewMovies()" color="accent">All Movies</button>
+    <span></span>
+    <button mat-stroked-button class="view-profile-btn" (click)="viewProfile()">My Profile</button>
+    <span></span>
+    <button mat-button class="log-me-out-btn" (click)="logMeOut()">
+      <mat-icon>logout</mat-icon> Log out
+    </button>
+  </div>
+</div>
