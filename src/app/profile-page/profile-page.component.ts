@@ -22,14 +22,33 @@ export class ProfilePageComponent implements OnInit {
     this.getUser();
   }
 
+  //logic to delete user's account from myFlix db
+  deleteProfile(): void {
+    const username = localStorage.getItem('user');
+    //prompt user to confirm this action because it is irreversible
+    if (confirm('This action is IRREVERSIBLE. Are you sure you want to deregister your account?')) {
+      //call to deleteUser() function in fetchApiData to permanently delete the user's account
+      this.fetchApiData.deleteUser(username).subscribe((result) => {
+        console.log(result);
+        localStorage.clear();
+      })
+      //if successful, navigate user back to the welcome page where they can register a new account if they wish
+      this.router.navigate(['welcome']).then(() => {
+        this.snackBar.open("Your account was successfully removed. We're sorry to see you go!", 'OK', {
+          duration: 3000
+        });
+      })
+    }//end if
+  }//end deleteProfile
+
   getUser(): void {
     const username = localStorage.getItem('user');
     this.fetchApiData.getUser(username).subscribe((resp: any) => {
       this.user = resp;
-      console.log(`user: ${this.user}`);
+      //console.log(`user: ${this.user}`);
       return this.user;
     })
-  }
+  }//end getUser
 
   //Calls the dialog to open from EditProfileComponent if user clicks on the "Edit My Profile" button
   openEditProfileDialog(): void {
