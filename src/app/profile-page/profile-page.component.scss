@@ -1,0 +1,30 @@
+$pageBackgroundColor: #d8dee5;
+$fontColor1: black;
+//$fontColor2: rgb(73, 55, 213);
+//$cardBackgroundColor: rgb(164, 188, 229);
+//$boxShadowColor: #363434;
+
+.profile-page-card {
+  background-color: $pageBackgroundColor;
+  color: $fontColor1;
+  display: block;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  width: 50%;
+  padding: 15px;
+}
+
+.mat-card-title {
+  font-size: x-large;
+}
+
+.profile-page-card-header {
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: large;
+}
