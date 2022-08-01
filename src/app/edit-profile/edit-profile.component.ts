@@ -15,16 +15,31 @@ export class EditProfileComponent implements OnInit {
   constructor(
     public fetchApiData: UserRegistrationService,
     public dialog: MatDialog,
+    public dialogRef: MatDialogRef<EditProfileComponent>,
     public router: Router,
     public snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
-  //implement editUser() function here...
+  //function to use fetchApiData to call the editUser endpoint and update the user's profile details
   editUser(): void {
-    console.log(`editUser() called`);
+    const userName = localStorage.getItem('user');
+    console.log(`editUser() called in edit-profile-component.ts`);
+    this.fetchApiData.editUser(this.userData, userName).subscribe((result) => {
+      this.dialogRef.close();
+      console.log(result);
+      this.snackBar.open('Your profile was successfully updated!', 'OK', {
+        duration: 3000
+      });
 
+      //After updating user info, clear local storage and redirect user back to the Welcome page so they can login with their new credentials
+      localStorage.clear();
+      this.router.navigate(['welcome']);
+      this.snackBar.open('Please use your new credentials to login', 'OK', {
+        duration: 3000
+      });
+    })
   }
 
 }//end EditProfileComponent
