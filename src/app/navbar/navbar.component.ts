@@ -21,5 +21,17 @@ export class NavbarComponent implements OnInit {
   }
 
   //define routes below...TBD
+  viewMovies(): void {
+    this.router.navigate(['movies']);
+  }
+
+  viewProfile(): void {
+    this.router.navigate(['profile']);
+  }
+
+  logMeOut(): void {
+    this.router.navigate(['welcome']);
+    localStorage.clear();
+  }
 
 }
