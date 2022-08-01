@@ -24,11 +24,11 @@ export class EditProfileComponent implements OnInit {
 
   //function to use fetchApiData to call the editUser endpoint and update the user's profile details
   editUser(): void {
-    const userName = localStorage.getItem('user');
+    const username = localStorage.getItem('user');
     console.log(`editUser() called in edit-profile-component.ts`);
-    this.fetchApiData.editUser(this.userData, userName).subscribe((result) => {
+    this.fetchApiData.editUser(this.userData, username).subscribe((result) => {
       this.dialogRef.close();
-      console.log(result);
+      console.log(`result: ${result}`);
       this.snackBar.open('Your profile was successfully updated!', 'OK', {
         duration: 3000
       });
