@@ -15,7 +15,12 @@
       <button mat-button color="primary">
         Synopsis
       </button>
-      <button class="favorite-button">
+      <!-- !isFav(movie._id) renders empty heart button-->
+      <button mat-button *ngIf="!isFav(movie._id)" class="favorite-button">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <!-- isFav(movie._id) renders filled-in heart button-->
+      <button mat-button *ngIf="isFav(movie._id)" class="favorite-button">
         <mat-icon>favorite_border</mat-icon>
       </button>
     </mat-card-actions>
