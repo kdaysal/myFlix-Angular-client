@@ -18,6 +18,7 @@ export class MovieCardComponent {
     this.getMovies();//get all movies from the db after loading the component
   }
 
+  //return all movies from the db
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
