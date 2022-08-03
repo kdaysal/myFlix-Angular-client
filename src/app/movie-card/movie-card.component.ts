@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRegistrationService } from '../fetch-api-data.service'
+import { MatDialog } from '@angular/material/dialog';
+
+//import all components that will be used on the MovieCard
+import { DirectorComponent } from '../director/director.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -10,12 +14,30 @@ export class MovieCardComponent {
   userData: any = {};//object to hold all userData retrieved from getUser()
   favoriteMovies: any[] = [];//array to hold the user's favorite movies
   movies: any[] = [];//array to hold all movies in the db
-  constructor(public fetchApiData: UserRegistrationService) { }
+
+  constructor(
+    public fetchApiData: UserRegistrationService,
+    public dialog: MatDialog
+  ) { }
 
   //this will be called when Angular is done creating the component (similar to componentDidMount)
   ngOnInit(): void {
     this.getFavoriteMovies();//get user's favorite movies after loading the component
     this.getMovies();//get all movies from the db after loading the component
+  }
+
+  //Open dialog for Director details
+  openDirectorDialog(name: string, bio: string, birth: Date, death: Date): void {
+    this.dialog.open(DirectorComponent, {
+      data: {
+        Name: name,
+        Bio: bio,
+        Birth: birth,
+        Death: death
+      },
+      // Assign dialog width
+      width: '500px'
+    });
   }
 
   //return all movies from the db
