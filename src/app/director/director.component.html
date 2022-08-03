@@ -1,1 +1,13 @@
-<p>director component works!</p>
+<mat-card class="profile-page-card">
+  <mat-card-header class="profile-page-card-header">
+    <mat-card-title>About The Director</mat-card-title>
+  </mat-card-header>
+
+  <!-- Show Profile Information -->
+  <mat-card-content class="profile-page-card-content">
+    <p><b>Name:</b> {{director.Name}}</p>
+    <p><b>Bio</b> {{director.Bio}}</p>
+    <p><b>Birth:</b> {{director.Birth | date }}</p>
+    <p><b>Death</b> {{director.Death}}</p>
+  </mat-card-content>
+</mat-card>
