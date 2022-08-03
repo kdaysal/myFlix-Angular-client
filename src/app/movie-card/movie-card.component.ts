@@ -28,6 +28,8 @@ export class MovieCardComponent {
 
   //Open dialog for Director details
   openDirectorDialog(name: string, bio: string, birth: Date, death: Date): void {
+    //get details for the specific director here...
+
     this.dialog.open(DirectorComponent, {
       data: {
         Name: name,
