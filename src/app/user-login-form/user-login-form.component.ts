@@ -49,12 +49,12 @@ export class UserLoginFormComponent implements OnInit {
       //upon successful user login, route the user to the '.../movies' endpoint
       this.router.navigate(['movies']);
 
-      this.snackBar.open(result, 'OK, user was logged in!', {
+      this.snackBar.open('Successfully logged in!', 'OK', {
         duration: 2000
       });
     }, (result) => {
       console.log(`result: ${result}`);
-      this.snackBar.open(result, 'OK', {
+      this.snackBar.open('Unable to log in - error', 'OK', {
         duration: 2000
       });
     });
