@@ -20,7 +20,7 @@
         <mat-icon>favorite_border</mat-icon>
       </button>
       <!-- isFavorite(movie._id) renders filled-in heart button-->
-      <button mat-button *ngIf="isFavorite(movie._id)" class="favorite-button">
+      <button mat-button *ngIf="isFavorite(movie._id)" class="favorite-button" (click)="removeFromFavorites(movie._id)">
         <mat-icon>favorite</mat-icon>
       </button>
     </mat-card-actions>
