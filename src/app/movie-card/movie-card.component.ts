@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 //import all components that will be used on the MovieCard
 import { DirectorComponent } from '../director/director.component';
+import { GenreComponent } from '../genre/genre.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -40,6 +41,22 @@ export class MovieCardComponent {
         Bio: bio,
         Birth: birth,
         Death: death
+      },
+      // Assign dialog width
+      width: '500px'
+    });
+  }
+
+  //Open dialog for Genre details
+  openGenreDialog(name: string, description: string): void {
+    //get details for the specific director here...
+    console.log(`name passed to openGenreDialog() is: ${name}`);
+    console.log(`description passed to openGenreDialog() is: ${description}`);
+
+    this.dialog.open(GenreComponent, {
+      data: {
+        Name: name,
+        Description: description
       },
       // Assign dialog width
       width: '500px'

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { UserRegistrationService } from '../fetch-api-data.service'
 
 @Component({
   selector: 'app-genre',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenreComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      Name: string,
+      Description: string
+    }
+
+  ) { }
 
   ngOnInit(): void {
   }
