@@ -24,6 +24,8 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DirectorComponent } from './director/director.component';
+import { GenreComponent } from './genre/genre.component';
+import { SynopsisComponent } from './synopsis/synopsis.component';
 
 //add all additional routes here (such as for the Profile - TBD)
 const appRoutes: Routes = [
@@ -43,7 +45,9 @@ const appRoutes: Routes = [
     ProfilePageComponent,
     EditProfileComponent,
     NavbarComponent,
-    DirectorComponent
+    DirectorComponent,
+    GenreComponent,
+    SynopsisComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
