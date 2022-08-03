@@ -39,10 +39,8 @@ export class MovieCardComponent {
   }
 
   //funtion to return a boolean that indicates whether a given movie is on the user's list of favorites or not
-  isFav(id: string): boolean {
-    //implement logic here...
-
-    return true;//this is only for testing
+  isFavorite(id: string): boolean {
+    return this.favoriteMovies.includes(id)
   }
 
 }//end MovieCardComponent
