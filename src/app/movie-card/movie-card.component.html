@@ -16,7 +16,7 @@
         Synopsis
       </button>
       <!-- !isFavorite(movie._id) renders empty heart button-->
-      <button mat-button *ngIf="!isFavorite(movie._id)" class="favorite-button">
+      <button mat-button *ngIf="!isFavorite(movie._id)" class="favorite-button" (click)="addToFavorites(movie._id)">
         <mat-icon>favorite_border</mat-icon>
       </button>
       <!-- isFavorite(movie._id) renders filled-in heart button-->
