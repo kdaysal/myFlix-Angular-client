@@ -43,4 +43,14 @@ export class MovieCardComponent {
     return this.favoriteMovies.includes(id)
   }
 
+  //function to add a movie title (via clicking on the movie card's heart icon) to the user's favoreMovies array
+  addToFavorites(id: string): void {
+    const username = localStorage.getItem('user');
+    console.log(id);
+    this.fetchApiData.addToFavorites(username, id).subscribe((result) => {
+      console.log(`result: ${result}`);
+      this.ngOnInit();//reload the component after updating the favoriteMovies array
+    })
+  }
+
 }//end MovieCardComponent
