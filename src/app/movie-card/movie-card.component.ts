@@ -30,16 +30,17 @@ export class MovieCardComponent {
   openDirectorDialog(name: string, bio: string, birth: Date, death: Date): void {
     //get details for the specific director here...
     console.log(`name passed to openDirectorDialog() is: ${name}`);
-    let splitName = name.split(' ');
-    let nameForApiCall = splitName[0] + "%20" + splitName[1];
-    console.log(`nameForAPICall = ${nameForApiCall}`);
+    console.log(`bio passed to openDirectorDialog() is: ${bio}`);
+    console.log(`birth passed to openDirectorDialog() is: ${birth}`);
+    console.log(`death passed to openDirectorDialog() is: ${death}`);
+
     this.dialog.open(DirectorComponent, {
-      // data: {
-      //   Name: nameForApiCall,
-      //   Bio: bio,
-      //   Birth: birth,
-      //   Death: death
-      // },
+      data: {
+        Name: name,
+        Bio: bio,
+        Birth: birth,
+        Death: death
+      },
       // Assign dialog width
       width: '500px'
     });

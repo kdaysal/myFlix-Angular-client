@@ -18,8 +18,8 @@ export class DirectorComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //call to get director info here
-    this.getDirector("Quentin%20Tarantino");
+    //call to get director info here, if @Inject won't work
+    // this.getDirector("Quentin%20Tarantino"); //to test the API call with a hard-coded director name
   }
 
   getDirector(name: string): void {
