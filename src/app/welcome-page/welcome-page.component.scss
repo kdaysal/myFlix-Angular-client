@@ -1,5 +1,11 @@
+$pageBackgroundColor: #d8dee5;
+$fontColor1: black;
+//$fontColor2: rgb(73, 55, 213);
+//$cardBackgroundColor: rgb(164, 188, 229);
+//$boxShadowColor: #363434;
+
 .main-page {
-  background-color: orange;
+  background-color: $pageBackgroundColor;
   display: block;
   text-align: center;
   margin-left: auto;
@@ -7,4 +13,6 @@
   margin-top: 5%;
   width: 30%;
   padding: 15px;
+  border: 3px solid rgb(232, 63, 100);
+  border-radius: 5px;
 }
