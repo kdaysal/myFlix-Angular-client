@@ -6,6 +6,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
+## Main Objective
+
+The purpose of this project was to use Angular to build out the client-side of an application called MyFlix, based on its existing server-side code (REST API and database) along with supporting documentation.
+
+## Key Features
+
+* The app displays a welcome view where users can either login or register a new account
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
