@@ -12,6 +12,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 The purpose of this project was to use Angular to build out the client-side of an application called MyFlix, based on its existing server-side code (REST API and database) along with supporting documentation.
 
+## User Stories
+
+* As a user, I want to be able to receive information on movies, directors, and genres so that I
+can learn more about movies I’ve watched or am interested in.
+
+* As a user, I want to be able to create a profile so I can save data about my favorite movies
+
 ## Key Features
 
 * The app displays a welcome view where users can either login or register a new account
