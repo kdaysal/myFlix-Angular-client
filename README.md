@@ -4,6 +4,8 @@
   <img src="https://github.com/kdaysal/myFlix-Angular-client/blob/master/src/img/1-readme.png" width="600" />
 </p>
 
+View the live hosted project [HERE](https://kdaysal.github.io/myFlix-Angular-client/) 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
 ## Main Objective
@@ -14,6 +16,33 @@ The purpose of this project was to use Angular to build out the client-side of a
 
 * The app displays a welcome view where users can either login or register a new account
 
+<p float="center">
+  <img src="https://github.com/kdaysal/myFlix-Angular-client/blob/master/src/img/4-readme.png" width="400" />
+</p>
+
+* Once authenticated, the user can now view all movies
+
+* Each movie card contains links to open dialogues with additional information about the movie's director, genre, and synopsis
+
+<p float="center">
+  <img src="https://github.com/kdaysal/myFlix-Angular-client/blob/master/src/img/2-readme.png" width="600" />
+</p>
+
+## Technical Requirements
+
+* The application must be written in Angular (version 9 or later)
+
+* The application requires the latest version of Node.js and npm package
+
+* The application must contain user registration and login forms
+
+* The application must be designed using Angular Material
+
+* The application's codebase must contain comments using Typedoc
+
+* The project must contain technical documentation using JSDoc
+
+* The project must be hosted on GitHub Pages
 
 
 ## Development server
