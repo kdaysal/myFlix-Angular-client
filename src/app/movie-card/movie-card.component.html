@@ -18,7 +18,7 @@
       <button mat-button (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)" color="primary">
         Genre
       </button>
-      <button mat-button color="primary">
+      <button mat-button color="primary" (click)="openSynopsisDialog(movie.Title, movie.Description)">
         Synopsis
       </button>
       <!-- !isFavorite(movie._id) renders empty heart button-->

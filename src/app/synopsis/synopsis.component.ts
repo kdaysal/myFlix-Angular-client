@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { UserRegistrationService } from '../fetch-api-data.service'
 
 @Component({
   selector: 'app-synopsis',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SynopsisComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA)
+    public data: {
+      Title: string,
+      Description: string
+    }
+
+  ) { }
 
   ngOnInit(): void {
   }
-
-}
+}//end SynopsisComponent
