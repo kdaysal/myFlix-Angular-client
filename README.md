@@ -1,7 +1,7 @@
 # MyFlixAngularClient
 
 <p float="center">
-  <img src="https://github.com/kdaysal/myFlix-Angular-client/blob/master/src/img/1-readme.png" width="300" />
+  <img src="https://github.com/kdaysal/myFlix-Angular-client/blob/master/src/img/1-readme.png" width="600" />
 </p>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
