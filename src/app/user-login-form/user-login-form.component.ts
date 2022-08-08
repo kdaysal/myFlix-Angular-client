@@ -34,7 +34,11 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // This is the function responsible for sending the form inputs to the backend
+  /**
+   * Function to process logging in the user.
+   * Responsible for sending the form inputs to the backend
+   * @function loginUser
+   */
   loginUser(): void {
     console.log(`loginUser() running`);
     this.fetchApiData.userLogin(this.userData).subscribe((result) => {
@@ -59,5 +63,4 @@ export class UserLoginFormComponent implements OnInit {
       });
     });
   }
-
 }//end UserLoginFormComponent
