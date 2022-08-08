@@ -28,7 +28,14 @@ export class MovieCardComponent {
     this.getMovies();//get all movies from the db after loading the component
   }
 
-  //Open dialog for Director details
+  /**
+   * Function to open a dialog to show director details of a given movie
+   * @function openDirectorDialog
+   * @param name
+   * @param bio
+   * @param birth
+   * @param death
+   */
   openDirectorDialog(name: string, bio: string, birth: Date, death: Date): void {
     //get details for the specific director here...
     console.log(`name passed to openDirectorDialog() is: ${name}`);
@@ -48,7 +55,12 @@ export class MovieCardComponent {
     });
   }
 
-  //Open dialog for Genre details
+  /**
+   * Function to open a dialog to show genre details of a given movie
+   * @function openGenreDialog
+   * @param name
+   * @param description
+   */
   openGenreDialog(name: string, description: string): void {
     //get details for the specific director here...
     console.log(`name passed to openGenreDialog() is: ${name}`);
@@ -64,7 +76,12 @@ export class MovieCardComponent {
     });
   }
 
-  //Open dialog for Synopsis details
+  /**
+   * Function to open a dialog to show synopsis details of a given movie
+   * @function openSynopsisDialog
+   * @param title
+   * @param description
+   */
   openSynopsisDialog(title: string, description: string): void {
     //get details for the specific director here...
     console.log(`title passed to openGenreDialog() is: ${title}`);
@@ -80,7 +97,11 @@ export class MovieCardComponent {
     });
   }
 
-  //return all movies from the db
+  /**
+   * Function to return all movies from the database
+   * @function getMovies
+   * @returns an array of movie objects
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -89,10 +110,14 @@ export class MovieCardComponent {
     });
   }
 
-  //function to get the user's favorite movies from the API
-  //I'm calling my `/users` endpoint because it contains all data for the user including an array of their favorite movies
+  /**
+   * Function to return a list of the user's favorite movies from the API
+   * @function getFavoriteMovies
+   * @returns an array of movie ids
+   */
   getFavoriteMovies(): void {
     const username = localStorage.getItem('user');
+    //I'm calling the `/users` endpoint because it contains all data for the user including an array of their favorite movies
     this.fetchApiData.getUser(username).subscribe((resp: any) => {
       this.userData = resp;
       console.log(`user ${username}'s FavoriteMovies: ${this.userData.FavoriteMovies}`);
@@ -100,12 +125,21 @@ export class MovieCardComponent {
     });
   }
 
-  //funtion to return a boolean that indicates whether a given movie is on the user's list of favorites or not
+  /**
+   * Function to return a boolean that indicates whether a given movie is on the user's list of favorites or not
+   * @function isFavorite
+   * @param id
+   * @returns a boolean (true if the movie is on the user's favorites list, false if not)
+   */
   isFavorite(id: string): boolean {
     return this.favoriteMovies.includes(id)
   }
 
-  //function to add a movie title (via clicking on the movie card's heart icon) to the user's favoriteMovies array
+  /**
+   * Function to add a movie title (via clicking on the movie card's heart icon) to the user's favoriteMovies array
+   * @function addToFavorites
+   * @param id
+   */
   addToFavorites(id: string): void {
     const username = localStorage.getItem('user');
     console.log(`movie id to add: ${id}`);
@@ -115,7 +149,11 @@ export class MovieCardComponent {
     })
   }
 
-  //function to remove a movie title (via clicking on the movie card's filled-in heart icon) from the user's favoriteMovies array
+  /**
+   * Function to remove a movie title (via clicking on the movie card's filled-in heart icon) from the user's favoriteMovies array
+   * @function removeFromFavorites
+   * @param id
+   */
   removeFromFavorites(id: string): void {
     const username = localStorage.getItem('user');
     console.log(`movie id to remove: ${id}`);
