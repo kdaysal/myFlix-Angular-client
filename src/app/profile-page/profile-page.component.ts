@@ -22,7 +22,11 @@ export class ProfilePageComponent implements OnInit {
     this.getUser();
   }
 
-  //logic to delete user's account from myFlix db
+
+  /**
+   * Function to delete the user's account from the myFlix db
+   * @function isFavorite
+   */
   deleteProfile(): void {
     const username = localStorage.getItem('user');
     //prompt user to confirm this action because it is irreversible
@@ -41,6 +45,11 @@ export class ProfilePageComponent implements OnInit {
     }//end if
   }//end deleteProfile
 
+  /**
+   * Function to get all user data from the API
+   * @function getUser
+   * @returns an object containing all data for the user (including username, password, email address, birthday)
+   */
   getUser(): void {
     const username = localStorage.getItem('user');
     this.fetchApiData.getUser(username).subscribe((resp: any) => {
@@ -51,10 +60,13 @@ export class ProfilePageComponent implements OnInit {
   }//end getUser
 
   //Calls the dialog to open from EditProfileComponent if user clicks on the "Edit My Profile" button
+  /**
+   * Function to open the EditProfileDialog if the user clicks on the "Edit My Profile" button
+   * @function openEditProfileDialog
+   */
   openEditProfileDialog(): void {
     this.dialog.open(EditProfileComponent, {
       width: '380px'
     })
   }
-
 }//end class ProfilePageComponent

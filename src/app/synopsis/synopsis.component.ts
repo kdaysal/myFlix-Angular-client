@@ -9,6 +9,11 @@ import { UserRegistrationService } from '../fetch-api-data.service'
 })
 export class SynopsisComponent implements OnInit {
 
+  /**
+       * Takes data from the MovieCard component and injects it via the MAT_DIALOG_DATA injection token.
+       * This data will be used to populate the dialog via the template.
+       * @param data
+       */
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
