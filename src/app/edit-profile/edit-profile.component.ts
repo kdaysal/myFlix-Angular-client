@@ -22,7 +22,12 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //function to use fetchApiData to call the editUser endpoint and update the user's profile details
+  /**
+   * editUser() is a function that uses 'fetchApiData' to call the 
+   * 'editUser' API endpoint and update the user's profile details.
+   * After a successful update, redirect the user back to the Welcome page
+   * @function editUser
+   */
   editUser(): void {
     const username = localStorage.getItem('user');
     console.log(`editUser() called in edit-profile-component.ts`);
