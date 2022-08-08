@@ -20,18 +20,25 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //define routes below...TBD
+  /**
+   * Function that uses Routing to navigate the user to the `/movies` route
+   */
   viewMovies(): void {
     this.router.navigate(['movies']);
   }
 
+  /**
+   * Function that uses Routing to navigate the user to the `/profile` route
+   */
   viewProfile(): void {
     this.router.navigate(['profile']);
   }
 
+  /**
+   * Function to clear data from localStorage and navigate the user to the '/welcome' route
+   */
   logMeOut(): void {
     this.router.navigate(['welcome']);
     localStorage.clear();
   }
-
-}
+}//end NavbarComponent
