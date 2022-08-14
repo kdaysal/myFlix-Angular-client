@@ -63,7 +63,7 @@ can learn more about movies I’ve watched or am interested in.
 
 * [TypeDoc](https://typedoc.org/) - converts comments in TypeScript source code into rendered HTML documentation
 
-* [JSDoc] - an API documentation generator for JavaScript
+* [JSDoc](https://github.com/jsdoc/jsdoc) - an API documentation generator for JavaScript
 
 * JavaScript, HTML, SCSS
 
