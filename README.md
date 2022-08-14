@@ -51,6 +51,21 @@ can learn more about movies I’ve watched or am interested in.
 
 * The project must be hosted on GitHub Pages
 
+## Technologies / strategies used in this project
+
+* [Trello](https://trello.com/en) - kanban board for working through this project following Agile principles
+
+* [AngularJS](https://angularjs.org/) - framework chosen for this version of the myFlix app
+
+* [NodeJS](https://nodejs.org/en/)
+
+* [Angular Material Design](https://material.angularjs.org/latest/) - reusable, well-tested and accessible UI components for Angular JS apps
+
+* [TypeDoc](https://typedoc.org/) - converts comments in TypeScript source code into rendered HTML documentation
+
+* [JSDoc] - an API documentation generator for JavaScript
+
+* JavaScript, HTML, SCSS
 
 ## Development server
 
